@@ -14,24 +14,27 @@
                         <form action="{% url 'register' %}" method="post">
                             {{ form }}
                             {% csrf_token %}
-                            <div class="form-group">
-                                <label>Mobile number</label>
-                                <input type="text" class="form-control" placeholder="Enter mobile number">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" class="form-control" placeholder="Password">
-                            </div>
-                            <div class="form-group">
-                                <label>Promocode</label>
-                                <input type="text" class="form-control" placeholder="Promocode">
-                            </div>
+                            {#                            <div class="form-group">#}
+                            {#                                <label>Mobile number</label>#}
+                            {#                                <input type="text" class="form-control" placeholder="Enter mobile number">#}
+                            {#                            </div>#}
+                            {#                            <div class="form-group">#}
+                            {#                                <label>Password</label>#}
+                            {#                                <input type="password" class="form-control" placeholder="Password">#}
+                            {#                            </div>#}
+                            {#                            <div class="form-group">#}
+                            {#                                <label>Promocode</label>#}
+                            {#                                <input type="text" class="form-control" placeholder="Promocode">#}
+                            {#                            </div>#}
                             <div class="mt-4">
-                                <button type="submit" class="btn btn-outline-primary btn-block btn-lg">Зарегистрироваться</button>
+                                <button type="submit" class="btn btn-outline-primary btn-block btn-lg">
+                                    Зарегистрироваться
+                                </button>
                             </div>
                         </form>
                         <div class="text-center mt-5">
-                            <p class="light-gray">У вас уже есть учетная запись? <a href="login.html">Войти в систему</a></p>
+                            <p class="light-gray">У вас уже есть учетная запись? <a href="login.html">Войти в
+                                систему</a></p>
                         </div>
                     </div>
                 </div>
@@ -40,26 +43,28 @@
                         <div class="owl-carousel owl-carousel-login">
                             <div class="item">
                                 <div class="carousel-login-card text-center">
-                                    <img src="img/login.png" class="img-fluid" alt="LOGO">
-                                    <h5 class="mt-5 mb-3">​Watch videos offline</h5>
-                                    <p class="mb-4">when an unknown printer took a galley of type and scrambled<br> it
-                                        to make a type specimen book. It has survived not <br>only five centuries</p>
+                                    <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                    <h5 class="mt-5 mb-3">Смотреть видео в автономном режиме</h5>
+                                    <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и <br> скремблировал
+                                        его сделать типовой образец книги.
+                                        <br>Он пережил не только пять веков</p>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="carousel-login-card text-center">
-                                    <img src="img/login.png" class="img-fluid" alt="LOGO">
-                                    <h5 class="mt-5 mb-3">Download videos effortlessly</h5>
-                                    <p class="mb-4">when an unknown printer took a galley of type and scrambled<br> it
-                                        to make a type specimen book. It has survived not <br>only five centuries</p>
+                                    <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                    <h5 class="mt-5 mb-3">Загрузка видео без особых усилий</h5>
+                                    <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и скремблировал сделать
+                                        типовой образец книги. <br> Он пережил не только пять веков</p>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="carousel-login-card text-center">
-                                    <img src="img/login.png" class="img-fluid" alt="LOGO">
-                                    <h5 class="mt-5 mb-3">Create GIFs</h5>
-                                    <p class="mb-4">when an unknown printer took a galley of type and scrambled<br> it
-                                        to make a type specimen book. It has survived not <br>only five centuries</p>
+                                    <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                    <h5 class="mt-5 mb-3">Создание GIF-файлов</h5>
+                                    <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и скремблировал его
+                                        сделать типовой образец книги.
+                                        <br>Он пережил не только пять веков</p>
                                 </div>
                             </div>
                         </div>
