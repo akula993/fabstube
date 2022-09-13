@@ -1,4 +1,46 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+
+<section class="login-main-wrapper">
+    <div class="container-fluid pl-0 pr-0">
+        <div class="row no-gutters">
+{% block login %}
+{% endblock %}
+            <div class="col-md-7">
+                <div class="login-main-right bg-white p-5 mt-5 mb-5">
+                    <div class="owl-carousel owl-carousel-login">
+                        <div class="item">
+                            <div class="carousel-login-card text-center">
+                                <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                <h5 class="mt-5 mb-3">Смотреть видео в автономном режиме</h5>
+                                <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и <br> скремблировал
+                                    его сделать типовой образец книги.
+                                    <br>Он пережил не только пять веков</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-login-card text-center">
+                                <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                <h5 class="mt-5 mb-3">Загрузка видео без особых усилий</h5>
+                                <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и скремблировал сделать
+                                    типовой образец книги. <br> Он пережил не только пять веков</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="carousel-login-card text-center">
+                                <img src="{% static 'img/login.png' %}" class="img-fluid" alt="LOGO">
+                                <h5 class="mt-5 mb-3">Создание GIF-файлов</h5>
+                                <p class="mb-4">когда неизвестный принтер взял камбуз шрифта и скремблировал его
+                                    сделать типовой образец книги.
+                                    <br>Он пережил не только пять веков</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
