@@ -61,10 +61,8 @@
                         {{ user }}
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        {% for el in account %}
-                            <a href="{{ el.get_absolute_url }}">Мой аккаунт</a>
-                        {% endfor %}
-                        <a class="dropdown-item" href="{{ get_absolute_url }}"><i class="fas fa-fw fa-user-circle"></i>Мой
+
+                        <a class="dropdown-item" href="{% url 'profile' user.id %}"><i class="fas fa-fw fa-user-circle"></i>Мой
                             аккаунт</a>
                         <a class="dropdown-item" href="subscriptions.html"><i class="fas fa-fw fa-video"></i>
                             Подписки</a>
