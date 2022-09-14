@@ -94,7 +94,10 @@ class Video(models.Model):
 
     def __str__(self):
         return self.slug
-
+    # def render_video(self, **kwargs):
+    #     poster_markup = '<img src="%s" height="%d" width="%d" />' %
+    #     return super(TestVideo, self).render_video(
+    #         poster_markup=poster_markup)
     class Meta:
         verbose_name = 'Видео'
         verbose_name_plural = 'Видео'

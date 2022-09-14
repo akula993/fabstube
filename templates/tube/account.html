@@ -131,18 +131,17 @@
                             <div class="col-xl-3 col-sm-6 mb-3">
                                 <div class="video-card">
                                     <div class="video-card-image">
-                                        <video id="player" playsinline controls data-poster="{{ video.file.url }}"
-                                               width="100%">
-                                            <source src="{{ video.file.url }}" type="video/mp4"/>
-                                            <source src="{{ video.file.url }}" type="video/webm"/>
-
+                                        <video id="my-video" class="video-js" controls preload="auto" width="auto"
+                                               height="auto" data-setup="{}">
+                                            <source src="{% url 'stream' video.id %}" type="video/mp4"/>
+                                            <source src="{% url 'stream' video.id %}" type="video/webm"/>
                                         </video>
-                                        <div class="single-video">
-                                            <iframe width="100%" height="315"
-                                                    src="{% url 'stream' video.pk %}"
-                                                    frameborder="0" allow="autoplay; encrypted-media"
-                                                    allowfullscreen></iframe>
-                                        </div>
+                                        {#                                        <div class="single-video">#}
+                                        {#                                            <iframe width="100%" height="315"#}
+                                        {#                                                    src="{% url 'stream' video.pk %}"#}
+                                        {#                                                    frameborder="0" allow="autoplay; encrypted-media"#}
+                                        {#                                                    allowfullscreen></iframe>#}
+                                        {#                                        </div>#}
                                     </div>
                                     <div class="video-card-body">
                                         <div class="video-title">
