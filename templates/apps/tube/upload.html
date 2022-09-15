@@ -1,0 +1,68 @@
+{% extends 'apps/base.html' %}
+{% block tube %}
+    <div id="content-wrapper">
+        <div class="container-fluid pt-5 pb-5">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center upload-video pt-5 pb-5">
+{#                    <form action="{% url 'video_create_url' %}" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        {% for field in form %}#}
+{#<div class="form-group">#}
+{#{% if field.errors %}#}
+{#<div class="alert alert-danger">#}
+{#{{ field.errors }}#}
+{#</div>#}
+{#{% endif %}#}
+{#{{ field.label }}#}
+{#{{ field }}#}
+{#</div>#}
+{#                        {% endfor %}#}
+{##}
+{##}
+{#                        <h1><i class="fas fa-file-upload text-primary"></i></h1>#}
+{#                        <h4 class="mt-5">Выберите видеофайлы для загрузки {{ form.as_p }}</h4>#}
+{#                        <p class="land">или перетаскивайте видеофайлы</p>#}
+{##}
+{#                        <div class="mt-4">#}
+{#                            <input class="btn btn-outline-primary" type="submit" value="Загрузить Видео"/>#}
+{##}
+{#                        </div>#}
+{#                    </form>#}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- Выводим каждое поле формы в отдельном параграфе -->
+    {{ user }}
+{#    {{ form.as_p }}#}
+    {{ form.file }}
+    {{ form.slug }}{{ form.profile }}
+    <button type="submit">Загрузка</button>
+</form>
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-6 col-sm-6">
+                        <p class="mt-1 mb-0">&copy; Copyright 2018 <strong class="text-dark">Vidoe</strong>. All Rights
+                            Reserved<br>
+                            <small class="mt-0 mb-0">Made with <i class="fas fa-heart text-danger"></i> by <a
+                                    class="text-primary" target="_blank" href="https://askbootstrap.com/">Ask
+                                Bootstrap</a>
+                            </small>
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 text-right">
+                        <div class="app">
+                            <a href="#"><img alt="" src="img/google.png"></a>
+                            <a href="#"><img alt="" src="img/apple.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- /.content-wrapper -->
+{% endblock %}

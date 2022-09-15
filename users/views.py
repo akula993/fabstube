@@ -1,8 +1,10 @@
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import DetailView
 
 from users.forms import UserCreationForm
+from users.models import Profile
 
 
 class Register(View):
@@ -28,3 +30,10 @@ class Register(View):
             'form': form
         }
         return render(request, self.template_name, context)
+
+
+
+class AccountView(DetailView):
+    model = Profile
+    template_name = 'apps/users/account.html'
+    context_object_name = 'account'

@@ -1,9 +1,22 @@
-from django.http import StreamingHttpResponse
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView
+from django.core.files.storage import FileSystemStorage
+from django.http import StreamingHttpResponse, request, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect
+from django.urls import reverse
+from django.views import View
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
-from tube.models import Channel
+from tube.forms import VideoForm, VideoUpdateForm
+from tube.models import Video
 from tube.services import open_file
+from users import models
+from users.models import Profile
+
+
+class HomeView(ListView):
+    model = models.Profile
+    template_name = 'apps/tube/index.html'
+    context_object_name = 'profile'
+    slug_field = 'username'
 
 
 class VideoView:
@@ -18,16 +31,30 @@ class VideoView:
         return response
 
 
-class HomeView(ListView):
-    model = Channel
-    template_name = 'tube/index.html'
-    context_object_name = 'channels'
+class VideoCreate(CreateView):
+    """Добовление видео"""
+    model = Video
+    template_name = 'apps/tube/upload.html'
+    form_class = VideoForm
+    success_url = '/'
 
 
-class AccountView(DetailView):
-    model = Channel
-    template_name = 'tube/account.html'
-    context_object_name = 'account'
+
+
+
+class VideoUpdate(UpdateView):
+    model = Video
+    template_name = 'apps/tube/uploadvideo.html'
+    form_class = VideoUpdateForm
+    extra_context = {'video': Video.objects.all()}
+    success_url = '/'
+
+
+class VideoDetail(DetailView):
+    model = Video
+    template_name = 'apps/tube/video-page.html'
+    context_object_name = 'video'
+
     #
     # def get_context_data(self, *args, **kwargs):
     #     users = Channel.objects.all()
